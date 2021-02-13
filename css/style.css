@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    background-image: linear-gradient(to bottom, #026ddc, #109bc6, #1bc0b4 ) ;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -80%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    transition: left 2s, opacity 1s;
+    z-index: 2;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 40%;
+}
+
+nav ul li {
+    list-style: none;
+    color: grey;
+    font-size: 20px;
+    border-left: 2px dotted #109bc6;
+    padding: 15px 10px;
+}
+
+#abre-fecha {
+    position: fixed;
+    bottom: 0; 
+    right: 0;
+    display: none;
+}
+
+#abre-fecha:checked ~ nav {
+    left: 0;
+    opacity: 0.97;
+}
+
+/* ICONES */
+
+.btn-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    border-radius: 0px 10px;
+}
+
+#btn-abre {
+    position: fixed;
+    bottom: calc(50% - 25px);
+    background-color: #02044b;
+    border: 1px solid #02044b ;
+    z-index: 1;
+}
+
+#btn-fecha {
+    position: fixed;
+    right: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #005a83;
+    border: 1px solid #005a83 ;
+    z-index: 3;
+    transition: right 0.4s;
+}
+
+#abre-fecha:checked ~ #btn-fecha {
+    right: 23%;
+    transition: 2s;
+}
